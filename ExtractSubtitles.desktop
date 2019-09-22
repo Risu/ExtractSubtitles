@@ -14,4 +14,4 @@ X-KDE-StartupNotify=false
 [Desktop Action extractSubs]
 Name=Extract Subtitles
 Icon=media-view-subtitles-symbolic
-Exec=type ccextractor; if [ $? -eq 0 ]; then konsole --hold -e bash -c 'dbusRef=$(kdialog --title="Subtitles" --progressbar "            Extracting...    Please wait...            " 0); ccextractor "%U"; qdbus $dbusRef close; kdialog --title "Subtitles" --passivepopup "Subtitles Extracted ('%U').";  kdialog --title "Subtitles" --msgbox "Extracting complete. Check the console for details.";'; else kdialog --title "Package missing" --error "Please install ccextractor from package manager."; fi;
+Exec=type ccextractor; if [ $? -eq 0 ]; then konsole --hold -e bash -c 'dbusRef=$(kdialog --title="Subtitles" --progressbar "            Extracting...    Please wait...            " 0); ccextractor "%u"; qdbus $dbusRef close; kdialog --title "Subtitles" --passivepopup "Subtitles Extracted ('%u').";  kdialog --title "Subtitles" --msgbox "Extracting complete. Check the console for details.";'; else kdialog --title "Package missing" --error "Please install ccextractor from package manager."; fi;
